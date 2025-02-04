@@ -1,22 +1,25 @@
 import AWS from "aws-sdk";
 
-const ses = new AWS.SES({
+AWS.config.update({
   region: "us-east-1",
-  accessKeyId: "AKIA47CRV54LCHD62KUX",
-  secretAccessKey: "BGIQwH8LIhCZ4k9ITxypAIwA18xDgnFc5ERsvXLSKJNF",
+  accessKeyId: "AKIAT7JJU3KAUDOF4KIT",
+  secretAccessKey: "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",
 });
+
+const ses = new AWS.SES({ apiVersion: "latest" });
 
 export async function POST(req) {
   try {
     const { name, email, suggestions } = await req.json();
 
     const params = {
-      Source: "yash.chauhan.yc@outlook.com",
+      Source: email,
       Destination: {
-        ToAddresses: [`${email}`], 
+        ToAddresses: ["panwargarvit31@gmail.com"],
       },
+      ReplyToAddresses: [email],
       Message: {
-        Subject: {
+        Subject: {  
           Data: "New Suggestion from Blog Form",
         },
         Body: {
@@ -31,7 +34,6 @@ export async function POST(req) {
         },
       },
     };
-
 
     const result = await ses.sendEmail(params).promise();
     console.log("SES Result:", result);
@@ -48,3 +50,6 @@ export async function POST(req) {
     );
   }
 }
+
+
+

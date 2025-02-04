@@ -1,0 +1,17 @@
+{
+  "node": {
+    "4093a89f9c8540094ad48411dd583004896c16fda5": {
+      "workers": {
+        "app/form/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgarvit%2FDesktop%2FBlog%20app%20%2Fsrc%2Fapp%2Fform%2Fpage.jsx%22%2C%5B%5B%224093a89f9c8540094ad48411dd583004896c16fda5%22%2C%22%24%24RSC_SERVER_ACTION_0%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/form/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "emynWYNn86GZK+jfTIQwaQJ7mm2vb5bWEGrlIOVmdE8="
+}
